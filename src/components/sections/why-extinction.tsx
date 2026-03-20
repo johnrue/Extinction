@@ -41,6 +41,28 @@ export function WhyExtinction() {
               coming.&rdquo;
             </p>
           </blockquote>
+
+          {/* Differentiators */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-10">
+            {[
+              { label: "Multidisciplinary", desc: "Not just security, not just psychology \u2014 both integrated" },
+              { label: "Operational", desc: "The team has done the work, not just studied it" },
+              { label: "Discrete", desc: "Source protection is built into how we operate" },
+              { label: "Preventive", desc: "Behavioral intelligence catches problems before they become incidents" },
+            ].map((item) => (
+              <div key={item.label} className="flex items-start gap-3">
+                <span className="text-gold mt-1 text-lg leading-none">&bull;</span>
+                <div>
+                  <span className="font-sans text-sm text-text-primary font-medium">
+                    {item.label}
+                  </span>
+                  <p className="font-sans text-[13px] text-text-secondary mt-0.5">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

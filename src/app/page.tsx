@@ -7,6 +7,7 @@ import { WhyExtinction } from "@/components/sections/why-extinction";
 import { WhoWeAre } from "@/components/sections/who-we-are";
 import { WhoThisIsFor } from "@/components/sections/who-this-is-for";
 import { CTA } from "@/components/sections/cta";
+import { Contact } from "@/components/sections/contact";
 import { Footer } from "@/components/layout/footer";
 import { Separator } from "@/components/ui/separator";
 
@@ -27,6 +28,8 @@ export default function Home() {
       <WhoThisIsFor />
       <Separator className="bg-border-custom" />
       <CTA />
+      <Separator className="bg-border-custom" />
+      <Contact />
       <Footer />
     </main>
   );

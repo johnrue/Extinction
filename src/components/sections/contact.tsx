@@ -1,0 +1,64 @@
+import { Mail, Phone, Globe } from "lucide-react";
+
+const contactItems = [
+  {
+    icon: Mail,
+    label: "Email",
+    value: "Info@ExtinctionServices.com",
+    href: "mailto:Info@ExtinctionServices.com",
+  },
+  {
+    icon: Phone,
+    label: "Phone",
+    value: "(727) 721-1982",
+    href: "tel:+17277211982",
+  },
+  {
+    icon: Globe,
+    label: "Web",
+    value: "ExtinctionServices.com",
+    href: "https://ExtinctionServices.com",
+  },
+];
+
+export function Contact() {
+  return (
+    <section className="bg-bg-surface py-20 px-6 xl:px-[120px]">
+      <div className="max-w-[1440px] mx-auto text-center">
+        <span className="font-sans text-xs tracking-[4px] text-gold uppercase">
+          CONTACT
+        </span>
+        <h2 className="font-heading text-[32px] lg:text-[40px] leading-tight text-text-primary mt-4">
+          Start a Confidential Conversation
+        </h2>
+        <p className="font-sans text-base text-text-secondary mt-4 max-w-[600px] mx-auto leading-relaxed">
+          Every engagement begins with a private consultation. No forms, no
+          intake process — just a direct conversation with our team.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+          {contactItems.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              className="bg-bg-card border border-border-custom p-6 flex flex-col items-center gap-3 hover:border-gold/50 transition-colors"
+            >
+              <item.icon className="text-gold" size={24} />
+              <span className="font-sans text-[11px] tracking-[3px] text-text-muted uppercase">
+                {item.label}
+              </span>
+              <span className="font-sans text-sm text-text-primary">
+                {item.value}
+              </span>
+            </a>
+          ))}
+        </div>
+
+        <p className="font-sans text-[13px] text-text-muted italic mt-8 max-w-[600px] mx-auto">
+          All inquiries are confidential. Operational team identities are
+          provided under NDA upon engagement.
+        </p>
+      </div>
+    </section>
+  );
+}

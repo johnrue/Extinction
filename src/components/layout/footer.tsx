@@ -22,13 +22,13 @@ export function Footer() {
             </span>
             <div className="mt-4 space-y-2">
               <p className="font-sans text-sm text-text-secondary">
-                contact@extinctionbehavior.com
+                Info@ExtinctionServices.com
               </p>
               <p className="font-sans text-sm text-text-secondary">
-                (555) 000-0000
+                (727) 721-1982
               </p>
               <p className="font-sans text-sm text-text-secondary">
-                extinctionbehavior.com
+                ExtinctionServices.com
               </p>
             </div>
           </div>

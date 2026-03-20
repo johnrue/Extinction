@@ -1,22 +1,29 @@
 export function TheGap() {
   const rows = [
     {
-      have: "Armed security and surveillance",
-      missing:
-        "No one trained to detect behavioral warning signs before an incident",
+      label: "Focus",
+      traditional: "Physical access / perimeter / surveillance",
+      behavioral: "Behavioral patterns / escalation / motivation",
     },
     {
-      have: "Background checks on new hires",
-      missing: "No ongoing behavioral monitoring of trusted insiders",
+      label: "Timing",
+      traditional: "Responds after an event",
+      behavioral: "Identifies signals before escalation",
     },
     {
-      have: "Crisis response protocols",
-      missing: "No early-warning system for grievance escalation",
+      label: "Threat Source",
+      traditional: "External intruders",
+      behavioral: "Insiders with access",
     },
     {
-      have: "Legal counsel and HR",
-      missing:
-        "No behavioral expertise for high-risk terminations or internal disputes",
+      label: "Detection",
+      traditional: "Cameras / alarms / access logs",
+      behavioral: "Trained interpretation of human behavior",
+    },
+    {
+      label: "Outcome",
+      traditional: "Incident management",
+      behavioral: "Incident prevention",
     },
   ];
 
@@ -32,26 +39,30 @@ export function TheGap() {
 
         <div className="mt-12">
           {/* Headers */}
-          <div className="grid grid-cols-2 gap-8 pb-4 border-b border-border-custom">
+          <div className="grid grid-cols-[120px_1fr_1fr] gap-8 pb-4 border-b border-border-custom">
+            <span />
             <span className="font-sans text-[11px] tracking-[3px] text-gold uppercase">
-              What You Have
+              Traditional Security
             </span>
             <span className="font-sans text-[11px] tracking-[3px] text-gold uppercase">
-              What&apos;s Missing
+              Behavioral Intelligence
             </span>
           </div>
 
           {/* Rows */}
-          {rows.map((row, i) => (
+          {rows.map((row) => (
             <div
-              key={i}
-              className="grid grid-cols-2 gap-8 py-4 border-b border-border-custom"
+              key={row.label}
+              className="grid grid-cols-[120px_1fr_1fr] gap-8 py-4 border-b border-border-custom"
             >
+              <span className="font-sans text-sm text-gold font-medium">
+                {row.label}
+              </span>
               <p className="font-sans text-sm text-text-secondary leading-relaxed">
-                {row.have}
+                {row.traditional}
               </p>
               <p className="font-sans text-sm text-text-primary leading-relaxed">
-                {row.missing}
+                {row.behavioral}
               </p>
             </div>
           ))}

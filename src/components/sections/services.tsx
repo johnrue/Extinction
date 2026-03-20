@@ -9,6 +9,8 @@ const services = [
     subtitle: "HUMINT",
     description:
       "Seeing what others miss. Discrete intelligence gathering, high-risk personality profiling, and detection of fixation and grievance escalation patterns across organizational operations.",
+    caseInsight:
+      "A client\u2019s household employee showed no red flags on background checks. Behavioral assessment identified fixation patterns within 72 hours.",
   },
   {
     image: "/images/btam-card.png",
@@ -17,6 +19,9 @@ const services = [
     subtitle: "BTAM",
     description:
       "Intervening before escalation. Strategic threat assessment and training to disrupt behavioral escalation — from grievance detection through crisis prevention and management.",
+    caseInsight:
+      "A corporation delayed action on an internal threat because the individual hadn\u2019t made an explicit statement. Our analysis identified three behavioral thresholds already crossed.",
+    escalationStages: ["Grievance", "Risk Factors", "Preparation", "Crisis"],
   },
   {
     image: "/images/behavioral-science-card.png",
@@ -25,6 +30,8 @@ const services = [
     subtitle: "BEHAVIORAL SCIENCE",
     description:
       "Understanding the people around you. Behavioral assessment, personality dynamics analysis, termination strategy, and leadership training to recognize the subtle cues that dictate response behavior.",
+    caseInsight:
+      "A CEO dismissed early warning signs from a direct report. Our structured behavioral evaluation identified escalation indicators. Intervention prevented a workplace violence incident.",
   },
 ];
 
@@ -69,6 +76,32 @@ export function Services() {
                 <p className="font-sans text-sm text-text-secondary leading-relaxed mt-4">
                   {service.description}
                 </p>
+
+                {/* BTAM Escalation Stages */}
+                {"escalationStages" in service && service.escalationStages && (
+                  <div className="flex items-center gap-2 mt-5">
+                    {service.escalationStages.map((stage, idx) => (
+                      <div key={stage} className="flex items-center gap-2">
+                        <span className="font-sans text-[11px] tracking-[2px] text-gold uppercase px-3 py-1 border border-gold/30 rounded-full">
+                          {stage}
+                        </span>
+                        {idx < service.escalationStages.length - 1 && (
+                          <span className="text-gold/50 text-xs">&rarr;</span>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {/* Case Insight */}
+                <div className="border-l-2 border-gold bg-bg-surface p-4 mt-5">
+                  <span className="font-sans text-[11px] tracking-[3px] text-gold uppercase">
+                    CASE INSIGHT
+                  </span>
+                  <p className="font-sans text-[13px] italic text-text-secondary leading-relaxed mt-2">
+                    {service.caseInsight}
+                  </p>
+                </div>
               </div>
             </div>
           ))}

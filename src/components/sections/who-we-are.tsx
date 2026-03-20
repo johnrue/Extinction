@@ -78,8 +78,11 @@ export function WhoWeAre() {
 
         <blockquote className="border-l-2 border-gold pl-6 mt-6">
           <p className="font-heading text-lg italic text-text-primary leading-relaxed">
-            &ldquo;We protect our own people the way we protect yours. Discretion
-            isn&apos;t a policy — it&apos;s proof of concept.&rdquo;
+            &ldquo;Our team includes professionals whose operational roles
+            require the same level of discretion we bring to every client
+            engagement. The fact that we protect our own people the way we
+            protect yours is not a limitation — it is a demonstration of our
+            standards.&rdquo;
           </p>
         </blockquote>
       </div>

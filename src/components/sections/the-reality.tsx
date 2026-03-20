@@ -27,6 +27,24 @@ export function TheReality() {
             </div>
           ))}
         </div>
+
+        {/* Stats Row */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 text-center">
+          {[
+            { stat: "72hrs", desc: "Average time our team identifies fixation patterns" },
+            { stat: "3x", desc: "Behavioral thresholds crossed before organizations act" },
+            { stat: "100%", desc: "Of incidents had observable behavioral precursors" },
+          ].map((item) => (
+            <div key={item.stat}>
+              <span className="font-heading text-[48px] text-gold leading-none">
+                {item.stat}
+              </span>
+              <p className="font-sans text-[13px] text-text-secondary mt-2">
+                {item.desc}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
