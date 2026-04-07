@@ -15,8 +15,8 @@ const contactItems = [
   {
     icon: Phone,
     label: "Phone",
-    value: "(727) 721-1982",
-    href: "tel:+17277211982",
+    value: "(737) 271-1982",
+    href: "tel:+17372711982",
   },
   {
     icon: Globe,
