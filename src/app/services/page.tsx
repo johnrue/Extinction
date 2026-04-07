@@ -10,6 +10,7 @@ import { Footer } from "@/components/layout/footer";
 const services = [
   {
     number: "01",
+    slug: "humint",
     label: "HUMINT",
     title: "Human Intelligence",
     icon: Eye,
@@ -26,6 +27,7 @@ const services = [
   },
   {
     number: "02",
+    slug: "btam",
     label: "BTAM",
     title: "Behavioral Threat Assessment",
     icon: ShieldAlert,
@@ -43,6 +45,7 @@ const services = [
   },
   {
     number: "03",
+    slug: "behavioral-analysis",
     label: "BEHAVIORAL SCIENCE",
     title: "Applied Behavioral Analysis",
     icon: Brain,
@@ -59,6 +62,7 @@ const services = [
   },
   {
     number: "04",
+    slug: "extortion",
     label: "CRISIS RESPONSE",
     title: "Extortion & Blackmail Response",
     icon: Shield,
@@ -155,6 +159,7 @@ function ServiceSection({
 
   return (
     <section
+      id={service.slug}
       ref={ref}
       className={`${service.bg} min-h-screen snap-start flex items-center px-6 xl:px-[120px]`}
     >
