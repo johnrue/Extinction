@@ -40,19 +40,19 @@ export function Footer() {
             </span>
             <div className="mt-4 space-y-2">
               <a
-                href="#services"
+                href="/services"
                 className="block font-sans text-sm text-text-secondary hover:text-text-primary transition-colors"
               >
                 Behavioral Analysis
               </a>
               <a
-                href="#services"
+                href="/services"
                 className="block font-sans text-sm text-text-secondary hover:text-text-primary transition-colors"
               >
                 Human Intelligence
               </a>
               <a
-                href="#services"
+                href="/services"
                 className="block font-sans text-sm text-text-secondary hover:text-text-primary transition-colors"
               >
                 Threat Assessment

@@ -26,7 +26,7 @@ export function Hero() {
           changes — giving you the insight that traditional security cannot.
         </p>
         <a
-          href="#contact"
+          href="/#contact"
           className="inline-block mt-8 bg-gold text-bg-primary font-sans text-sm font-medium py-4 px-10 hover:bg-gold/90 transition-colors"
         >
           Request a Confidential Consultation

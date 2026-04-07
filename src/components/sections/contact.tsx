@@ -1,3 +1,5 @@
+"use client";
+
 import { Mail, Phone, Globe } from "lucide-react";
 
 const contactItems = [
@@ -23,7 +25,7 @@ const contactItems = [
 
 export function Contact() {
   return (
-    <section className="bg-bg-surface py-20 px-6 xl:px-[120px]">
+    <section id="contact" className="bg-bg-surface py-20 px-6 xl:px-[120px]">
       <div className="max-w-[1440px] mx-auto text-center">
         <span className="font-sans text-xs tracking-[4px] text-gold uppercase">
           CONTACT
@@ -32,9 +34,64 @@ export function Contact() {
           Start a Confidential Conversation
         </h2>
         <p className="font-sans text-base text-text-secondary mt-4 max-w-[600px] mx-auto leading-relaxed">
-          Every engagement begins with a private consultation. No forms, no
-          intake process — just a direct conversation with our team.
+          Every engagement begins with a private consultation. Submit the form
+          below or reach out directly — all inquiries are confidential.
         </p>
+
+        {/* Contact Form */}
+        <form
+          className="max-w-[600px] mx-auto mt-10 text-left"
+          onSubmit={(e) => e.preventDefault()}
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label className="font-sans text-xs text-text-muted tracking-[1px] block mb-1.5">
+                First Name
+              </label>
+              <input
+                type="text"
+                placeholder="John"
+                className="w-full bg-bg-card border border-border-custom px-4 py-3 font-sans text-sm text-text-primary placeholder:text-text-muted focus:border-gold/50 focus:outline-none transition-colors"
+              />
+            </div>
+            <div>
+              <label className="font-sans text-xs text-text-muted tracking-[1px] block mb-1.5">
+                Last Name
+              </label>
+              <input
+                type="text"
+                placeholder="Doe"
+                className="w-full bg-bg-card border border-border-custom px-4 py-3 font-sans text-sm text-text-primary placeholder:text-text-muted focus:border-gold/50 focus:outline-none transition-colors"
+              />
+            </div>
+          </div>
+          <div className="mt-4">
+            <label className="font-sans text-xs text-text-muted tracking-[1px] block mb-1.5">
+              Email
+            </label>
+            <input
+              type="email"
+              placeholder="john@example.com"
+              className="w-full bg-bg-card border border-border-custom px-4 py-3 font-sans text-sm text-text-primary placeholder:text-text-muted focus:border-gold/50 focus:outline-none transition-colors"
+            />
+          </div>
+          <div className="mt-4">
+            <label className="font-sans text-xs text-text-muted tracking-[1px] block mb-1.5">
+              Message
+            </label>
+            <textarea
+              rows={4}
+              placeholder="Tell us briefly about your situation..."
+              className="w-full bg-bg-card border border-border-custom px-4 py-3 font-sans text-sm text-text-primary placeholder:text-text-muted focus:border-gold/50 focus:outline-none transition-colors resize-none"
+            />
+          </div>
+          <button
+            type="submit"
+            className="bg-gold text-bg-primary font-sans text-sm font-medium py-3.5 px-8 mt-6 hover:bg-gold/90 transition-colors"
+          >
+            Send Confidential Inquiry
+          </button>
+        </form>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
           {contactItems.map((item) => (

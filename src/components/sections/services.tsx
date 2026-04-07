@@ -1,9 +1,9 @@
 import Image from "next/image";
-import { Eye, ShieldAlert, Brain } from "lucide-react";
+import { Eye, ShieldAlert, Brain, Shield } from "lucide-react";
 
 const services = [
   {
-    image: "/images/humint-card.png",
+    image: "/images/humint-card-new.png",
     icon: Eye,
     title: "Human Intelligence",
     subtitle: "HUMINT",
@@ -13,7 +13,7 @@ const services = [
       "A client\u2019s household employee showed no red flags on background checks. Behavioral assessment identified fixation patterns within 72 hours.",
   },
   {
-    image: "/images/btam-card.png",
+    image: "/images/btam-card-new.png",
     icon: ShieldAlert,
     title: "Behavioral Threat Assessment",
     subtitle: "BTAM",
@@ -24,7 +24,7 @@ const services = [
     escalationStages: ["Grievance", "Risk Factors", "Preparation", "Crisis"],
   },
   {
-    image: "/images/behavioral-science-card.png",
+    image: "/images/behavioral-card-new.png",
     icon: Brain,
     title: "Applied Behavioral Science",
     subtitle: "BEHAVIORAL SCIENCE",
@@ -32,6 +32,16 @@ const services = [
       "Understanding the people around you. Behavioral assessment, personality dynamics analysis, termination strategy, and leadership training to recognize the subtle cues that dictate response behavior.",
     caseInsight:
       "A CEO dismissed early warning signs from a direct report. Our structured behavioral evaluation identified escalation indicators. Intervention prevented a workplace violence incident.",
+  },
+  {
+    image: "/images/extortion-card.png",
+    icon: Shield,
+    title: "Extortion & Blackmail Response",
+    subtitle: "CRISIS RESPONSE",
+    description:
+      "Structured, confidential intervention for blackmail, extortion, and coercion situations. Threat verification, communication management, and resolution strategy that neutralizes leverage.",
+    caseInsight:
+      "A high-profile client received escalating extortion demands tied to private information. Our team verified the threat source, managed all communications, and developed a resolution strategy that neutralized the leverage.",
   },
 ];
 
@@ -51,7 +61,7 @@ export function Services() {
           decisively.
         </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
           {services.map((service) => (
             <div
               key={service.subtitle}
@@ -79,10 +89,10 @@ export function Services() {
 
                 {/* BTAM Escalation Stages */}
                 {"escalationStages" in service && service.escalationStages && (
-                  <div className="flex items-center gap-2 mt-5">
+                  <div className="flex flex-wrap items-center gap-2 mt-5">
                     {service.escalationStages.map((stage, idx) => (
                       <div key={stage} className="flex items-center gap-2">
-                        <span className="font-sans text-[11px] tracking-[2px] text-gold uppercase px-3 py-1 border border-gold/30 rounded-full">
+                        <span className="font-sans text-[10px] tracking-[1.5px] text-gold uppercase px-2.5 py-1 border border-gold/30 rounded-full whitespace-nowrap">
                           {stage}
                         </span>
                         {idx < service.escalationStages.length - 1 && (

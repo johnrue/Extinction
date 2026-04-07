@@ -25,32 +25,32 @@ export function Navbar() {
     >
       <div className="max-w-[1440px] mx-auto flex items-center justify-between px-6 xl:px-[120px] py-5">
         {/* Logo */}
-        <a href="#" className="font-heading text-lg font-semibold tracking-[3px] text-text-primary">
+        <a href="/" className="font-heading text-lg font-semibold tracking-[3px] text-text-primary">
           E X T I N C T I O N
         </a>
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
           <a
-            href="#services"
+            href="/services"
             className="font-sans text-sm text-text-secondary hover:text-text-primary transition-colors"
           >
             Services
           </a>
           <a
-            href="#about"
+            href="/#about"
             className="font-sans text-sm text-text-secondary hover:text-text-primary transition-colors"
           >
             About
           </a>
           <a
-            href="#contact"
+            href="/#contact"
             className="font-sans text-sm text-text-secondary hover:text-text-primary transition-colors"
           >
             Contact
           </a>
           <a
-            href="#contact"
+            href="/#contact"
             className="bg-gold text-bg-primary font-sans text-sm font-medium px-6 py-2.5 hover:bg-gold/90 transition-colors"
           >
             Request a Consultation
@@ -71,28 +71,28 @@ export function Navbar() {
       {mobileOpen && (
         <div className="md:hidden bg-bg-primary/95 backdrop-blur-md border-t border-border-custom px-6 py-6 flex flex-col gap-5">
           <a
-            href="#services"
+            href="/services"
             className="font-sans text-sm text-text-secondary hover:text-text-primary transition-colors"
             onClick={() => setMobileOpen(false)}
           >
             Services
           </a>
           <a
-            href="#about"
+            href="/#about"
             className="font-sans text-sm text-text-secondary hover:text-text-primary transition-colors"
             onClick={() => setMobileOpen(false)}
           >
             About
           </a>
           <a
-            href="#contact"
+            href="/#contact"
             className="font-sans text-sm text-text-secondary hover:text-text-primary transition-colors"
             onClick={() => setMobileOpen(false)}
           >
             Contact
           </a>
           <a
-            href="#contact"
+            href="/#contact"
             className="bg-gold text-bg-primary font-sans text-sm font-medium px-6 py-3 text-center hover:bg-gold/90 transition-colors"
             onClick={() => setMobileOpen(false)}
           >

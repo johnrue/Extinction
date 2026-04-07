@@ -16,7 +16,7 @@ export function CTA() {
             Request a Confidential Consultation
           </a>
           <a
-            href="#services"
+            href="/services"
             className="border border-gold text-gold font-sans text-sm font-medium py-4 px-10 hover:bg-gold/10 transition-colors"
           >
             Learn More About Our Services
