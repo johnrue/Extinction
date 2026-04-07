@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[720px] flex items-end">
+    <section className="relative min-h-[500px] md:min-h-[720px] flex items-end">
       {/* Background image */}
       <Image
         src="/images/hero-bg.png"
@@ -16,7 +16,7 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-[1440px] mx-auto px-6 xl:px-[120px] pb-20">
-        <h1 className="font-heading text-4xl lg:text-[40px] leading-tight text-text-primary max-w-[800px]">
+        <h1 className="font-heading text-2xl md:text-4xl lg:text-[40px] leading-tight text-text-primary max-w-[800px]">
           Security Protects What You&apos;ve Built. Behavioral Intelligence
           Protects You From What You Can&apos;t See Coming.
         </h1>

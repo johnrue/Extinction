@@ -110,7 +110,7 @@ export function Services() {
           <Link
             key={service.subtitle}
             href={`/services#${service.slug}`}
-            className="w-[calc(50%-12px)] min-w-[500px] flex-shrink-0 snap-start border border-border-custom overflow-hidden hover:border-gold/30 transition-colors group"
+            className="w-[calc(85%-12px)] md:w-[calc(50%-12px)] min-w-[280px] md:min-w-[500px] flex-shrink-0 snap-start border border-border-custom overflow-hidden hover:border-gold/30 transition-colors group"
           >
             <div className="relative h-[220px] overflow-hidden">
               <Image

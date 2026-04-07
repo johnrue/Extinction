@@ -39,13 +39,13 @@ export function TheGap() {
 
         <div className="mt-12">
           {/* Headers */}
-          <div className="grid grid-cols-[120px_1fr_1fr] gap-8 pb-4 border-b border-border-custom">
-            <span />
+          <div className="grid grid-cols-[1fr_1fr] md:grid-cols-[120px_1fr_1fr] gap-4 md:gap-8 pb-4 border-b border-border-custom">
+            <span className="hidden md:block" />
             <span className="font-sans text-[11px] tracking-[3px] text-gold uppercase">
-              Traditional Security
+              Traditional
             </span>
             <span className="font-sans text-[11px] tracking-[3px] text-gold uppercase">
-              Behavioral Intelligence
+              Behavioral
             </span>
           </div>
 
@@ -53,12 +53,13 @@ export function TheGap() {
           {rows.map((row) => (
             <div
               key={row.label}
-              className="grid grid-cols-[120px_1fr_1fr] gap-8 py-4 border-b border-border-custom"
+              className="grid grid-cols-[1fr_1fr] md:grid-cols-[120px_1fr_1fr] gap-4 md:gap-8 py-4 border-b border-border-custom"
             >
-              <span className="font-sans text-sm text-gold font-medium">
+              <span className="hidden md:block font-sans text-sm text-gold font-medium">
                 {row.label}
               </span>
               <p className="font-sans text-sm text-text-secondary leading-relaxed">
+                <span className="text-gold font-medium md:hidden">{row.label}: </span>
                 {row.traditional}
               </p>
               <p className="font-sans text-sm text-text-primary leading-relaxed">

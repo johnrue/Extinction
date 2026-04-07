@@ -36,7 +36,7 @@ export function TheReality() {
             { stat: "100%", desc: "Of incidents had observable behavioral precursors" },
           ].map((item) => (
             <div key={item.stat}>
-              <span className="font-heading text-[48px] text-gold leading-none">
+              <span className="font-heading text-[36px] md:text-[48px] text-gold leading-none">
                 {item.stat}
               </span>
               <p className="font-sans text-[13px] text-text-secondary mt-2">
