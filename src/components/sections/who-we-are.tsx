@@ -12,15 +12,27 @@ export function WhoWeAre() {
     },
   ];
 
-  const capabilities = [
-    "Violence Prevention",
-    "Behavioral Analysis",
-    "Threat Assessment",
-    "Crisis Intervention",
-    "Behavioral Conditioning",
-    "Executive Protection",
-    "Intelligence Operations",
-    "Applied Behavioral Science",
+  const team = [
+    {
+      role: "Senior Behavioral Analyst",
+      specialties: "Violence Prevention \u2022 Behavioral Conditioning",
+      bio: "Decades of field experience in behavioral analysis and violence prevention, specializing in identifying pre-incident indicators and developing intervention strategies for high-risk environments.",
+    },
+    {
+      role: "Threat Assessment Lead",
+      specialties: "Threat Assessment \u2022 Crisis Intervention",
+      bio: "Expert in multi-disciplinary threat assessment methodologies with extensive background in law enforcement and intelligence-driven risk evaluation.",
+    },
+    {
+      role: "Intelligence Operations Director",
+      specialties: "Intelligence Operations \u2022 Executive Protection",
+      bio: "Former intelligence professional with deep expertise in HUMINT operations, counter-surveillance, and protective intelligence for high-profile principals.",
+    },
+    {
+      role: "Crisis Response Specialist",
+      specialties: "Crisis Consulting \u2022 Applied Behavioral Science",
+      bio: "Specializes in real-time crisis response and behavioral conditioning, bridging forensic evaluation with actionable field protocols.",
+    },
   ];
 
   return (
@@ -29,9 +41,6 @@ export function WhoWeAre() {
         <span className="font-sans text-xs tracking-[4px] text-gold uppercase">
           WHO WE ARE
         </span>
-        <h2 className="font-heading text-[32px] lg:text-[40px] leading-tight text-text-primary mt-4">
-          Who We Are
-        </h2>
 
         {/* Advisory Board */}
         <h3 className="font-heading text-[28px] text-text-primary mt-8">
@@ -60,18 +69,26 @@ export function WhoWeAre() {
         <h3 className="font-heading text-[28px] text-text-primary mt-12">
           Operational Team
         </h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-6">
-          {capabilities.map((cap) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+          {team.map((member) => (
             <div
-              key={cap}
-              className="bg-bg-card border border-border-custom px-4 py-2 text-sm text-text-secondary font-sans"
+              key={member.role}
+              className="bg-bg-card border border-border-custom p-7"
             >
-              {cap}
+              <h4 className="font-heading text-xl text-text-primary">
+                {member.role}
+              </h4>
+              <p className="font-sans text-[11px] tracking-[2px] text-gold uppercase mt-1">
+                {member.specialties}
+              </p>
+              <p className="font-sans text-sm text-text-secondary leading-relaxed mt-4">
+                {member.bio}
+              </p>
             </div>
           ))}
         </div>
 
-        <p className="font-sans text-[15px] text-text-secondary leading-relaxed mt-6">
+        <p className="font-sans text-[15px] text-text-secondary leading-relaxed mt-8">
           60+ years combined experience across law enforcement, intelligence,
           behavioral science, forensic evaluation, and crisis management.
         </p>

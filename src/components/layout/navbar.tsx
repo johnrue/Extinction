@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -25,8 +26,8 @@ export function Navbar() {
     >
       <div className="max-w-[1440px] mx-auto flex items-center justify-between px-6 xl:px-[120px] py-5">
         {/* Logo */}
-        <a href="/" className="font-heading text-lg font-semibold tracking-[3px] text-text-primary">
-          E X T I N C T I O N
+        <a href="/">
+          <Image src="/images/logo.png" alt="Extinction Behavior Services" width={160} height={56} className="h-10 w-auto" />
         </a>
 
         {/* Desktop nav */}

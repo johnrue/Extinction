@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function Footer() {
   return (
     <footer className="bg-bg-primary border-t border-border-custom py-14 px-6 xl:px-[120px]">
@@ -6,9 +8,9 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Brand */}
           <div>
-            <span className="font-heading text-lg font-semibold tracking-[3px] text-text-primary">
-              E X T I N C T I O N
-            </span>
+            <a href="/">
+              <Image src="/images/logo.png" alt="Extinction Behavior Services" width={160} height={56} className="h-10 w-auto" />
+            </a>
             <p className="font-sans text-sm text-text-muted leading-relaxed mt-4 max-w-[360px]">
               Security protects what you&apos;ve built. Behavioral intelligence
               protects you from what you can&apos;t see coming.
@@ -40,22 +42,28 @@ export function Footer() {
             </span>
             <div className="mt-4 space-y-2">
               <a
-                href="/services"
-                className="block font-sans text-sm text-text-secondary hover:text-text-primary transition-colors"
-              >
-                Behavioral Analysis
-              </a>
-              <a
-                href="/services"
+                href="/services#humint"
                 className="block font-sans text-sm text-text-secondary hover:text-text-primary transition-colors"
               >
                 Human Intelligence
               </a>
               <a
-                href="/services"
+                href="/services#btam"
                 className="block font-sans text-sm text-text-secondary hover:text-text-primary transition-colors"
               >
-                Threat Assessment
+                Behavioral Threat Assessment
+              </a>
+              <a
+                href="/services#behavioral-analysis"
+                className="block font-sans text-sm text-text-secondary hover:text-text-primary transition-colors"
+              >
+                Behavioral Analysis
+              </a>
+              <a
+                href="/services#extortion"
+                className="block font-sans text-sm text-text-secondary hover:text-text-primary transition-colors"
+              >
+                Extortion &amp; Blackmail Response
               </a>
             </div>
           </div>
@@ -64,12 +72,12 @@ export function Footer() {
         {/* Divider */}
         <div className="border-t border-border-custom mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="font-sans text-sm text-text-muted">
-            &copy; 2026 Extinction Behavior Services
+            &copy; 2026 Extinction Behavior Services. All rights reserved.
           </p>
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-green-500" />
             <span className="font-sans text-sm text-text-secondary">
-              System Operational
+              Secure Connection
             </span>
           </div>
         </div>
