@@ -19,16 +19,14 @@ export default function Home() {
       <Separator className="bg-border-custom" />
       <TheReality />
       <Separator className="bg-border-custom" />
-      <TheGap />
-      <Separator className="bg-border-custom" />
-      <Services />
-      <Separator className="bg-border-custom" />
-      <ExtortionResponse />
-      <Separator className="bg-border-custom" />
       <WhyExtinction />
       <WhoWeAre />
       <WhoThisIsFor />
       <Separator className="bg-border-custom" />
+      <TheGap />
+      <Separator className="bg-border-custom" />
+      <Services />
+      <ExtortionResponse />
       <Contact />
       <Footer />
     </main>
