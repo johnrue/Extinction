@@ -1,0 +1,33 @@
+# Extinction Behavior Services
+
+> Behavioral intelligence that identifies threats before they escalate, reads environments others overlook, and provides the insight to act decisively.
+
+## About
+
+Extinction Behavior Services (ExBS) is a behavioral intelligence firm combining crisis negotiation, forensic evaluation, intelligence operations, and behavioral science. We provide behavioral threat assessment, human intelligence (HUMINT), applied behavioral analysis, and extortion/blackmail response services.
+
+## Services
+
+- [Human Intelligence (HUMINT)](/services#humint): Discrete intelligence gathering, high-risk personality profiling, fixation and grievance escalation pattern detection, undercover intelligence collection.
+- [Behavioral Threat Assessment (BTAM)](/services#btam): Strategic threat assessment, violence prevention training, behavioral risk indicator detection, escalation intervention.
+- [Applied Behavioral Analysis](/services#behavioral-analysis): Behavioral assessment, personality dynamics analysis, termination strategy, leadership training.
+- [Extortion & Blackmail Response](/services#extortion): Threat verification, controlled communication management, evidence preservation, counter-leverage strategy.
+
+## Contact
+
+- Email: Info@ExtinctionServices.com
+- Phone: (727) 721-1982
+- Web: ExtinctionServices.com
+
+## Location
+
+Tampa Bay area, Florida. Services provided nationally and internationally.
+
+## Differentiators
+
+- Multidisciplinary: Security and psychology integrated
+- Operational: Team has real-world operational experience
+- Discrete: Source protection built into operations
+- Preventive: Catches problems before they become incidents
+- 72 hours average to identify fixation patterns
+- 100% of incidents had observable behavioral precursors
