@@ -1,6 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import { Mail, Phone, Globe } from "lucide-react";
+
+const CONTACT_API = process.env.NEXT_PUBLIC_CONTACT_API || "";
 
 const contactItems = [
   {
@@ -24,6 +27,38 @@ const contactItems = [
 ];
 
 export function Contact() {
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("sending");
+
+    const form = e.currentTarget;
+    const data = {
+      firstName: (form.elements.namedItem("firstName") as HTMLInputElement).value,
+      lastName: (form.elements.namedItem("lastName") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+    };
+
+    try {
+      const res = await fetch(CONTACT_API, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        setStatus("sent");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  }
+
   return (
     <section id="contact" className="bg-bg-surface py-20 px-6 xl:px-[120px]">
       <div className="max-w-[1440px] mx-auto text-center">
@@ -39,59 +74,92 @@ export function Contact() {
         </p>
 
         {/* Contact Form */}
-        <form
-          className="max-w-[600px] mx-auto mt-10 text-left"
-          onSubmit={(e) => e.preventDefault()}
-        >
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label className="font-sans text-xs text-text-muted tracking-[1px] block mb-1.5">
-                First Name
-              </label>
-              <input
-                type="text"
-                placeholder="John"
-                className="w-full bg-bg-card border border-border-custom px-4 py-3 font-sans text-sm text-text-primary placeholder:text-text-muted focus:border-gold/50 focus:outline-none transition-colors"
-              />
-            </div>
-            <div>
-              <label className="font-sans text-xs text-text-muted tracking-[1px] block mb-1.5">
-                Last Name
-              </label>
-              <input
-                type="text"
-                placeholder="Doe"
-                className="w-full bg-bg-card border border-border-custom px-4 py-3 font-sans text-sm text-text-primary placeholder:text-text-muted focus:border-gold/50 focus:outline-none transition-colors"
-              />
-            </div>
+        {status === "sent" ? (
+          <div className="max-w-[600px] mx-auto mt-10 border border-gold/30 p-10">
+            <span className="font-sans text-xs tracking-[4px] text-gold uppercase">
+              MESSAGE RECEIVED
+            </span>
+            <p className="font-sans text-base text-text-primary mt-4">
+              Thank you for reaching out. A member of our team will respond
+              within 24 hours.
+            </p>
+            <button
+              onClick={() => setStatus("idle")}
+              className="font-sans text-sm text-gold mt-6 hover:underline"
+            >
+              Send another message
+            </button>
           </div>
-          <div className="mt-4">
-            <label className="font-sans text-xs text-text-muted tracking-[1px] block mb-1.5">
-              Email
-            </label>
-            <input
-              type="email"
-              placeholder="john@example.com"
-              className="w-full bg-bg-card border border-border-custom px-4 py-3 font-sans text-sm text-text-primary placeholder:text-text-muted focus:border-gold/50 focus:outline-none transition-colors"
-            />
-          </div>
-          <div className="mt-4">
-            <label className="font-sans text-xs text-text-muted tracking-[1px] block mb-1.5">
-              Message
-            </label>
-            <textarea
-              rows={4}
-              placeholder="Tell us briefly about your situation..."
-              className="w-full bg-bg-card border border-border-custom px-4 py-3 font-sans text-sm text-text-primary placeholder:text-text-muted focus:border-gold/50 focus:outline-none transition-colors resize-none"
-            />
-          </div>
-          <button
-            type="submit"
-            className="bg-gold text-bg-primary font-sans text-sm font-medium py-3.5 px-8 mt-6 hover:bg-gold/90 transition-colors"
+        ) : (
+          <form
+            className="max-w-[600px] mx-auto mt-10 text-left"
+            onSubmit={handleSubmit}
           >
-            Send Confidential Inquiry
-          </button>
-        </form>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label className="font-sans text-xs text-text-muted tracking-[1px] block mb-1.5">
+                  First Name
+                </label>
+                <input
+                  name="firstName"
+                  type="text"
+                  required
+                  placeholder="John"
+                  className="w-full bg-bg-card border border-border-custom px-4 py-3 font-sans text-sm text-text-primary placeholder:text-text-muted focus:border-gold/50 focus:outline-none transition-colors"
+                />
+              </div>
+              <div>
+                <label className="font-sans text-xs text-text-muted tracking-[1px] block mb-1.5">
+                  Last Name
+                </label>
+                <input
+                  name="lastName"
+                  type="text"
+                  placeholder="Doe"
+                  className="w-full bg-bg-card border border-border-custom px-4 py-3 font-sans text-sm text-text-primary placeholder:text-text-muted focus:border-gold/50 focus:outline-none transition-colors"
+                />
+              </div>
+            </div>
+            <div className="mt-4">
+              <label className="font-sans text-xs text-text-muted tracking-[1px] block mb-1.5">
+                Email
+              </label>
+              <input
+                name="email"
+                type="email"
+                required
+                placeholder="john@example.com"
+                className="w-full bg-bg-card border border-border-custom px-4 py-3 font-sans text-sm text-text-primary placeholder:text-text-muted focus:border-gold/50 focus:outline-none transition-colors"
+              />
+            </div>
+            <div className="mt-4">
+              <label className="font-sans text-xs text-text-muted tracking-[1px] block mb-1.5">
+                Message
+              </label>
+              <textarea
+                name="message"
+                rows={4}
+                required
+                placeholder="Tell us briefly about your situation..."
+                className="w-full bg-bg-card border border-border-custom px-4 py-3 font-sans text-sm text-text-primary placeholder:text-text-muted focus:border-gold/50 focus:outline-none transition-colors resize-none"
+              />
+            </div>
+
+            {status === "error" && (
+              <p className="font-sans text-sm text-red-400 mt-3">
+                Something went wrong. Please try again or email us directly.
+              </p>
+            )}
+
+            <button
+              type="submit"
+              disabled={status === "sending"}
+              className="bg-gold text-bg-primary font-sans text-sm font-medium py-3.5 px-8 mt-6 hover:bg-gold/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {status === "sending" ? "Sending..." : "Send Confidential Inquiry"}
+            </button>
+          </form>
+        )}
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
           {contactItems.map((item) => (
