@@ -9,7 +9,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <a href="/">
-              <Image src="/images/logo.png" alt="Extinction Behavior Services" width={160} height={56} className="h-10 w-auto" />
+              <Image src="/images/logo.png" alt="Extinction Behavior Services" width={240} height={84} className="h-[72px] w-auto" />
             </a>
             <p className="font-sans text-sm text-text-muted leading-relaxed mt-4 max-w-[360px]">
               Security protects what you&apos;ve built. Behavioral intelligence
