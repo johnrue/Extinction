@@ -1,7 +1,7 @@
 export function WhoWeAre() {
   const advisors = [
     {
-      name: "Dr. Andy Young, PhD",
+      name: "Dr. Andy Young Ed.D, LPC-S, NCC",
       title: "Crisis Negotiation, Threat Assessment, Published Author",
       bio: "Dr. Young brings decades of experience in crisis negotiation and threat assessment, serving as a leading voice in behavioral intelligence and published authority in the field.",
     },
